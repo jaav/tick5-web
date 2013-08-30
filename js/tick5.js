@@ -58,7 +58,7 @@
 				touchScrolling: true,
 				visibleHotSpotBackgrounds: "always",
 				autoScrollingMode: "onstart"});
-			$('#refresher').click(function (ev) {
+			$('img').click(function (ev) {
 				ev.preventDefault();
 				var prev_style = current_style;
 				if (current_style == 'cartoon') current_style = current_styles[0];
@@ -66,11 +66,9 @@
 					var test = $.inArray(current_style, current_styles);
 					current_style = current_styles[$.inArray(current_style, current_styles) + 1];
 				}
-				$('div.tweet > img.real').each(function (block) {
-					console.log($(this).attr('src'));
-					var newSrc = $(this).attr('src').replace(prev_style, current_style);
-					$(this).attr('src', newSrc);
-				});
+				var fancyImage = $(this).closest('.tweet').children('img.real');
+				var newSrc = $(fancyImage).attr('src').replace(prev_style, current_style);
+				$(fancyImage).attr('src', newSrc);
 			});
 		});
 	});
