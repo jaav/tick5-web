@@ -1,11 +1,11 @@
-var pair_styles = ["vintage2", "toycamera", "nightvision", "squared", "cartoon"];
-var unpair_styles = ["vintage2", "toycamera", "nightvision", "squared", "cartoon"];
+var pair_styles = ["thermography", "squared", "vintage2", "toycamera", "cartoon"];
+var unpair_styles = ["thermography", "squared", "vintage2", "toycamera", "cartoon"];
 var current_styles;
 var current_style = "cartoon";
 $(document).ready(function () {
 
 
-	$.getJSON('/api/ticks/' + pub_key, function (data) {
+	$.getJSON('http://dblnd.com/api/ticks/' + pub_key, function (data) {
 		var items = [];
 
 		var enrichTweet = function (tweetContent, hashtags) {
@@ -54,7 +54,7 @@ $(document).ready(function () {
 			var httpurls = "";
 			if (urls.length > 0)
 				httpurls = '<div class="urls">' + urls.join(" - ") + '</div>';
-			items.push('<div class="tweet"><img class="real" src="/repo/datatracker_images/' + val.image + '_cartoon.jpg" width="320px"><img src="images/template_w_b.png" width="320" style="position:absolute;top:0;left:0;" /><div class="content_container"><div class="content">\"' + enrichedTweet + '\"</div>' + httpurls + '<div class="author"><a href="http://twitter.com/#!/' + val.author + '" target="_blank">@' + val.author + '</a></div></div></div>');
+			items.push('<div class="tweet"><img class="real" src="/repo/datatracker_images/' + val.image + '_'+current_styles[0]+'.jpg" width="320px"><img src="images/template_w_b.png" width="320" style="position:absolute;top:0;left:0;" /><div class="content_container"><div class="content">\"' + enrichedTweet + '\"</div>' + httpurls + '<div class="author"><a href="http://twitter.com/#!/' + val.author + '" target="_blank">@' + val.author + '</a></div></div></div>');
 		});
 
 		$(items.join('')).appendTo('div#mySwipe div.swipe-wrap');

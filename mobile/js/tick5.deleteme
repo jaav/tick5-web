@@ -5,7 +5,7 @@
 	$(document).ready(function () {
 
 
-		$.getJSON('/api/ticks/' + pub_key, function (data) {
+		$.getJSON('http://dblnd.com/api/ticks/' + pub_key, function (data) {
 			var items = [];
 
 			var enrichTweet = function (tweetContent, hashtags) {

@@ -1,46 +1,64 @@
 
-body{
-  font-family: 'Dosis', Arial, serif;
+body {
+  font-family: 'Exo', Arial, serif;
   color: #EEE;
   font-weight: 800;
   background-color: #111;
   font-size: 16px;
 }
 
-div.head{
+div#dblnd, div#about {
+  color: #111;
+  font-weight: 600;
+}
+
+div.head {
   line-height: 120px;
   text-align: center;
   font-size: 16px;
 }
 
-div.title{
+div.title, div.bars_container {
   text-align: center;
   width: 100%;
   font-weight: 600;
-  margin-top: 16px;
-}
-div.title div.subtitle{
-  font-size: 13px;
-}
-div#wrap{
+  line-height: 0;
 }
 
-#makeMeScrollable
-{
-  width:100%;
-	height: 460px;
-	position: relative;
+div.bars_container {
+  background: url("../images/db_bars.png") center repeat-y;
+  height: 100%;
+}
+
+div.title_container {
+  position: absolute;
+  top: -336px;
+  z-index: 999;
+  height: 0%;
+  width: 100%;
+}
+
+div.title div.subtitle {
+  font-size: 13px;
+}
+
+div#wrap {
+}
+
+#makeMeScrollable {
+  width: 100%;
+  height: 460px;
+  position: relative;
   margin-top: 80px;
 }
 
-#makeMeScrollable .imgContainer{
+#makeMeScrollable .imgContainer {
   width: 480px;
 }
 
 /*#makeMeScrollable div.scrollableArea{
   width: 3840px;
 }*/
-
 
 #makeMeScrollable div.scrollableArea div.tweet {
   position: relative;
@@ -54,74 +72,102 @@ div#wrap{
   height: 460px;
 
 }
-div.share{
+
+div.share {
   padding: 16px 0 56px;
 }
-div.tweet img{
+
+div.tweet img {
 
 }
-div.tweet div.content_container{
+
+div.tweet div.content_container {
   position: absolute;
   top: 220px;
   left: 32px;
   width: 396px;
 }
-div.tweet div.content_container .content{
+
+div.tweet div.content_container .content {
   position: absolute;
   top: 0px;
   font-size: 24px;
   width: 100%;
   border-radius: 10px;
 }
-div.tweet div.content_container .author{
+
+div.tweet div.content_container .author {
   position: absolute;
   top: 200px;
   right: 0px;
   border-radius: 10px;
 }
-div.tweet div.content_container .urls{
+
+div.tweet div.content_container .urls {
   position: absolute;
   top: 120px;
   text-align: left;
   border-radius: 10px;
 }
-div.tweet div.content_container .hashtags{
+
+div.tweet div.content_container .hashtags {
   position: absolute;
   top: 160px;
   text-align: left;
   border-radius: 10px;
 }
 
-div.tweet{
+div.tweet div.content_container .retweet {
+  position: absolute;
+  top: -205px;
+  right: -17px;
+  border-radius: 10px;
+}
+
+div.tweet div.content_container .retweet  a img{
+  width: 32px;
+}
+
+div.tweet {
   color: #111;
   text-shadow: 0px 0px 0px #333333, 0px 1px 0px #FFFFFF;
 }
 
-div.tweet div.content_container a{
+div.tweet div.content_container a {
   color: #111;
   /*text-shadow: 0px 0px 0px #333333, 0px 1px 0px #33FF00;*/
 }
 
-div.tweet .urls, div.tweet .hashtags, div.tweet .author, div.tweet .content{
-background: rgba(255, 255, 255, 0.4);
-padding: 5px;
+div.tweet .urls, div.tweet .retweet, div.tweet .author, div.tweet .content {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 5px;
 }
 
-div#refresher{
-  width:100%;
+div#refresher {
+  width: 100%;
 }
 
-div#refresher a{
+div#refresher a {
   margin: 16px;
 }
 
-
-
-div#footer{
+div#footer {
   font-size: 12px;
   font-weight: 600;
 }
 
+img.logo {
+  width: 320px;
+}
+
+img.bars {
+  width: 100px;
+  margin: -2px 4px 0 0;
+}
+
+.tweetcontent {
+  display: none;
+}
 
 /************* OVERWRITE BOOTSTRAP ***************/
 [class^="icon-"], [class*=" icon-"] {

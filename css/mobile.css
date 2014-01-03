@@ -32,11 +32,11 @@ small {
 
 
 html, body{
-  font-family: 'Dosis', Arial, serif;
+  font-family: 'Exo', Arial, serif;
   color: #EEE;
-  font-weight: 800;
+  font-weight: 500;
   background-color: #111;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 #console {
@@ -76,7 +76,7 @@ div.tweet {
 }
 div.tweet div.content_container{
   width: 320px;
-  height: 200px;
+  height: 220px;
 }
 div.tweet div.content_container .content{
   border-radius: 10px;
@@ -94,15 +94,66 @@ div.tweet div.content_container .hashtags{
   border-radius: 10px;
 }
 
+div.tweet .retweet, div.tweet .about{
+  position: absolute;
+  top: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 5px;
+  font-size: 0px;
+}
+
+div.tweet .up{
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 5px;
+  font-size: 0px;
+  margin: 10px auto;
+  width: 80%;
+}
+div.tweet .retweet{
+  right: 20px;
+}
+div.tweet .about{
+  left: 20px;
+}
+
+
+div.tweet .retweet a img, div.tweet .about a img, div.tweet .up a img{
+  width: 24px;
+}
 div.tweet{
+  position: relative;
   color: #eee;
 }
 
-div.tweet div.content_container a{
+div.tweet a{
   color: #eee;
 }
 
 div.tweet .urls, div.tweet .hashtags, div.tweet .author, div.tweet .content{
 padding: 5px 20px;
+}
+
+.about_container{
+  height: 480px;
+  line-height: 20px;
+}
+.about_header{
+  font-size: 113%;
+}
+.about_content{
+  text-align: justify;
+  margin: 10px;
+}
+.about_header, .about_content, .up{
+  display: none;
+}
+img.border{
+  position:absolute;top:0;left:0;
+}
+img.border, img.real{
+  width: 320px;
+  height: 320px;
 }
 

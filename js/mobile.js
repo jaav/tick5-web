@@ -1,7 +1,7 @@
-var pair_styles = ["vintage2", "toycamera", "nightvision", "squared", "cartoon"];
-var unpair_styles = ["vintage2", "toycamera", "nightvision", "squared", "cartoon"];
+var pair_styles = ["toycamera", "squared", "vintage2", "cartoon", "thermography"];
+var unpair_styles = ["toycamera", "squared", "vintage2", "cartoon", "thermography"];
 var current_styles;
-var current_style = "cartoon";
+var current_style = "thermography";
 $(document).ready(function () {
 
 
@@ -27,7 +27,7 @@ $(document).ready(function () {
 			var result = myRe.exec(path)[0];
 			if (result) return result.substring(1, result.length - 1);
 		}
-
+		var about = 'We constantly scan all tweets published by a panel of about 2000 multidisciplinary techies, mostly software developers from all over the world. Every 15 minutes on the 15th minute, we filter out the 5 most important/popular entries and publish them here and on our <a href="">android app</a> (iOS is underway).';
 
 		$.each(data.tweets, function (key, val) {
 			if (val.id.indexOf("Q2") > 0 || val.id.indexOf("Q4") > 0) current_styles = pair_styles;
@@ -54,7 +54,7 @@ $(document).ready(function () {
 			var httpurls = "";
 			if (urls.length > 0)
 				httpurls = '<div class="urls">' + urls.join(" - ") + '</div>';
-			items.push('<div class="tweet"><img class="real" src="/repo/datatracker_images/' + val.image + '_cartoon.jpg" width="320px"><img src="images/template_w_b.png" width="320" style="position:absolute;top:0;left:0;" /><div class="content_container"><div class="content">\"' + enrichedTweet + '\"</div>' + httpurls + '<div class="author"><a href="http://twitter.com/#!/' + val.author + '" target="_blank">@' + val.author + '</a></div></div></div>');
+			items.push('<div class="tweet"><img class="real" src="/repo/datatracker_images/' + val.image + '_cartoon.jpg"><img src="../images/template_w_b.png" class="border" /><div class="about"><a href="#"><img src="../images/db_sq_logo_32.png" /></a></div><div class="retweet"><a href="twitter://post?message='+encodeURIComponent(val.tweet)+' - via @'+val.author+' and @dblnd'+'"><img src="../images/share.png" /></a></div><div class="content_container"><div class="content">\"' + enrichedTweet + '\"</div>' + httpurls + '<div class="author"><a href="http://twitter.com/#!/' + val.author + '" target="_blank">@' + val.author + '</a></div></div><div class="about_container"><div class="about_header">Welcome to \'Double Blind\'</div><div class="about_content">'+about+'</div><div class="up"><a href="#"><img src="../images/up_32.png" /></a></div></div></div>');
 		});
 
 		$(items.join('')).appendTo('div#mySwipe div.swipe-wrap');
@@ -63,7 +63,7 @@ $(document).ready(function () {
 				var thisImage = $(this).children('img.real');
 				var current_style = getFilter(thisImage.attr('src'));
 
-				if (current_style == 'cartoon') var new_style = current_styles[0];
+				if (current_style == 'thermography') var new_style = current_styles[0];
 				else {
 					var new_style = current_styles[$.inArray(current_style, current_styles) + 1];
 				}
@@ -74,18 +74,19 @@ $(document).ready(function () {
 
 		window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
 
-		$('#refresher').click(function (ev) {
+		$('.about').click(function(ev){
 			ev.preventDefault();
-			var prev_style = current_style;
-			if (current_style == 'cartoon') current_style = current_styles[0];
-			else {
-				var test = $.inArray(current_style, current_styles);
-				current_style = current_styles[$.inArray(current_style, current_styles) + 1];
-			}
-			$('div.tweet > img.real').each(function (block) {
-				console.log($(this).attr('src'));
-				var newSrc = $(this).attr('src').replace(prev_style, current_style);
-				$(this).attr('src', newSrc);
+			$('.about_header').show();
+			$('.about_content').show();
+			$('.up').show();
+			$('html, body').animate({scrollTop:$(document).height()});
+		});
+		$('.up').click(function(ev){
+			ev.preventDefault();
+			$('html, body').animate({scrollTop:0}, function(){
+				$('.about_header').hide();
+				$('.about_content').hide();
+				$('.up').hide();
 			});
 		});
 	});
