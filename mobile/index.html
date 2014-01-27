@@ -2,65 +2,96 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 	<title>Double Blind News</title>
-<meta http-equiv="X-UA-Compatible" content="IE=8">
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
-<link href='http://fonts.googleapis.com/css?family=Dosis:400,500,600,700|Exo:400,500,600,700,800' rel='stylesheet' type='text/css'>
-<link href='../css/mobile.css' rel='stylesheet'/>
-<style>
+	<meta http-equiv="X-UA-Compatible" content="IE=8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+	<link href='http://fonts.googleapis.com/css?family=Dosis:400,500,600,700|Exo:400,500,600,700,800' rel='stylesheet'
+	      type='text/css'>
+	<link href='../css/jquery.mmenu.css' rel='stylesheet'/>
+	<link href='../css/mobile.css?1' rel='stylesheet'/>
+	<style>
 
-/* Swipe 2 required styles */
+		/* Swipe 2 required styles */
 
-.swipe {
-  overflow: hidden;
-  visibility: hidden;
-  position: relative;
-	margin: 0 auto;
-	max-width: 320px;
-}
-.swipe-wrap {
-  overflow: hidden;
-  position: relative;
-}
-.swipe-wrap > div {
-  float:left;
-  width:100%;
-}
+		.swipe {
+			overflow: hidden;
+			visibility: hidden;
+			position: relative;
+			margin: 0 auto;
+			max-width: 320px;
+		}
 
-/* END required styles */
+		.swipe-wrap {
+			overflow: hidden;
+			position: relative;
+		}
 
-</style>
+		.swipe-wrap > div {
+			float: left;
+			width: 100%;
+		}
+
+		/* END required styles */
+
+	</style>
 
 </head>
 <body>
-
-<div id='mySwipe' class='swipe'>
-  <div class='swipe-wrap'>
-  </div>
+<div id="header">
+	<a href="#nav"></a>
+	D o u b l e B l i n d
 </div>
+<div id="liner"></div>
+<div id='mySwipe' class='swipe'>
+	<div class='swipe-wrap'>
+	</div>
+</div>
+<div id="about_container">
+	<div class="header">Welcome to 'Double Blind'</div>
+	<div class="content">
+		<p>We constantly scan all tweets published by a panel of about 2000 multidisciplinary techies, mostly software developers from all over the world.
+			Every 15 minutes on the 15th minute, we filter out the 5 most important/popular entries and publish them here and on our
+			<a href=\"https://play.google.com/store/apps/details?id=be.virtualsushi.tick5\">android app</a> (iOS is underway).</p>
+		<p> - We avoid tweets from journalists and marketeers.<br/> - We favor tweets containing typical tech terms, like e.g. 'coffee' or 'regex' or
+			point to tech websites like e.g. github or jsfiddle.</p>
+		<p>This way, we come up with a very limited set of tweets that will be close to what you're interested in.</p>
+	</div>
+	<div id="up">
+		<a href="#"><img src="../images/down_32.png" /></a>
+	</div>
+</div>
+<nav id="nav">
+	<ul>
+		<li><a href="#" id="about" title="About Double Blind" name="About Double Blind"><img src="../images/about.png" alt="About"/> About</a></li>
+		<li><a href="http://twitter.com/dblnd" target="_blank" title="Double Blind on Twitter" name="Double Blind on Twitter"><img src="../images/twitter_32.png" alt="@dblnd on Twitter"/> @dblnd on Twitter</a></li>
+		<li><a href="#" id="share" title="Share on Twitter" name="Share on Twitter"><img src="../images/share_white_32.png" alt="share"/> Share this</a></li>
+		<li><a href="#" id="history" title="See previous items" name="See previous items"><img src="../images/back_32.png" alt="history"/> Previous publications</a></li>
+		<li><a href="https://play.google.com/store/apps/details?id=be.virtualsushi.tick5" title="Android App" name="Android App" target="_blank"><img src="../images/android_32.png" alt="android"/> Android app</a></li>
+	</ul>
+</nav>
 
 
-
-
+<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src='../js/swipe.js'></script>
 <script src='../js/pub.js'></script>
-<script src='../js/mobile.js'></script>
+<script src='../js/jquery.mmenu.min.js'></script>
+<script src='../js/mobile.js?1'></script>
 <script>
 
-// pure JS
-//var elem = document.getElementById('mySwipe');
-//window.mySwipe = Swipe(elem, {
-  // startSlide: 4,
-  // auto: 3000,
-  // continuous: true,
-  // disableScroll: true,
-  // stopPropagation: true,
-  // callback: function(index, element) {},
-  // transitionEnd: function(index, element) {}
-//});
+	// pure JS
+	//var elem = document.getElementById('mySwipe');
+	//window.mySwipe = Swipe(elem, {
+	// startSlide: 4,
+	// auto: 3000,
+	// continuous: true,
+	// disableScroll: true,
+	// stopPropagation: true,
+	// callback: function(index, element) {},
+	// transitionEnd: function(index, element) {}
+	//});
 
-// with jQuery
+	// with jQuery
 
 </script>

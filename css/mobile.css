@@ -36,7 +36,48 @@ html, body{
   color: #EEE;
   font-weight: 500;
   background-color: #111;
-  font-size: 13px;
+  font-size: 16px;
+}
+
+#header{
+  background: #1c1c1c;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 32px;
+  height: 32px;
+  padding: 0 50px;
+}
+#header a{
+  background: center center no-repeat transparent;
+  background-image: url("../images/menu_32.png");
+  display: block;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  left: -5px;
+}
+#liner{
+  width: 100%;
+  height: 1px;
+  background-color: #fefefe;
+
+}
+
+#nav ul li a img{
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.mm-menu {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.mm-list > li > a:hover {
+  text-decoration: underline;
 }
 
 #console {
@@ -94,7 +135,7 @@ div.tweet div.content_container .hashtags{
   border-radius: 10px;
 }
 
-div.tweet .retweet, div.tweet .about{
+div.tweet .retweet{
   position: absolute;
   top: 20px;
   border-radius: 10px;
@@ -102,24 +143,12 @@ div.tweet .retweet, div.tweet .about{
   padding: 5px;
   font-size: 0px;
 }
-
-div.tweet .up{
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.4);
-  padding: 5px;
-  font-size: 0px;
-  margin: 10px auto;
-  width: 80%;
-}
 div.tweet .retweet{
   right: 20px;
 }
-div.tweet .about{
-  left: 20px;
-}
 
 
-div.tweet .retweet a img, div.tweet .about a img, div.tweet .up a img{
+div.tweet .retweet a img, div.tweet .up a img{
   width: 24px;
 }
 div.tweet{
@@ -135,20 +164,34 @@ div.tweet .urls, div.tweet .hashtags, div.tweet .author, div.tweet .content{
 padding: 5px 20px;
 }
 
-.about_container{
+#about_container{
   height: 480px;
   line-height: 20px;
+  font-size: 90%;
 }
-.about_header{
+#about_container .header{
   font-size: 113%;
+  text-align: center;
+  margin: 0 auto;
 }
-.about_content{
+#about_container .content{
   text-align: justify;
   margin: 10px;
 }
-.about_header, .about_content, .up{
+#about_container{
   display: none;
+  height: 500px;
 }
+#up{
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 5px;
+  font-size: 0px;
+  margin: 10px auto;
+  width: 80%;
+  text-align: center;
+}
+
 img.border{
   position:absolute;top:0;left:0;
 }
